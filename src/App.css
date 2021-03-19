@@ -4,3 +4,15 @@
   display: inline;
   padding-left: 10px;
 }
+*
+{
+  background-color: aquamarine;
+ 
+}
+#home{
+  text-align: center;
+  font-family: bold;
+  font-size: 20px;
+  color: rgb(2, 13, 26);
+}
+

@@ -14,7 +14,7 @@ import Hilfe from "./components/Hilfe"
 import Prüfung from "./components/Prüfung"
 import Navbar from "./components/Navbar"
 import NichtGefunden from './components/NichtGefunden';
-
+import Bild1 from './image/bild1.jpg'
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
 
         <Switch>
 
-          <Route exact path='/'> <Home /></Route>
+          <Route exact path='/'> <Home src={Bild1}/></Route>
           <Route path='/Info'><Info /></Route>
           <Route path='/Hilfe'><Hilfe /></Route>
           <Route path="/Prüfung"><Prüfung /></Route>
