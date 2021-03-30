@@ -1,0 +1,15 @@
+.Answers{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+.Answers li{
+    padding: 10px;
+    border-left: 4px solid #00ff7f;
+    margin: 0 0 5px;
+    background-color: #f1dfc8;
+}
+.Answers li:hover{
+    cursor: pointer;
+    background-color: #746552;
+}
