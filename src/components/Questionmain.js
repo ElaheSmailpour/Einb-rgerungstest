@@ -39,12 +39,26 @@ export default class Quiz extends Component {
             score: 0
         }
     }
+    checkAnswer=(answer)=>{
+const {correctAnswers,setp,score,clickedAnswer}=this.state;
+if (answer===correctAnswer[step]){
+this.setState({score:score +1,correctAnswer:correctAnswers[setp],clickedAnswer:answer})
+}
+else {
+    this.setState({correctAnswer:0,clickedAnswer:answer})
+}
+    }
     render() {
        let { questions} = this.state
         return (
             <div className="Quiz">
                 <Question question={questions[1]} />
-            <Answer answer={this.state.answers[1]}/>
+            <Answer answer={answers[step]}
+            setp={setp}
+            checkAnswer={this.checkAnswer}
+            correctAnswer={correctAnswer}
+            clickedAnswer={clickedAnswer}
+            />
             </div>
         )
     }

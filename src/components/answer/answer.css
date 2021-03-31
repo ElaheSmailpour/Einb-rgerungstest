@@ -13,3 +13,16 @@
     cursor: pointer;
     background-color: #746552;
 }
+.Answers .correct ,
+.Answers .correct:hover
+{
+background-color: green;
+color: #ffffff;
+}
+
+.Answers .incorrect ,
+.Answers .incorrect:hover
+{
+background-color: red;
+color: #ffffff;
+}

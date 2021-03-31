@@ -3,13 +3,16 @@ import "./answer.css"
 
 const Answer = (props) => {
     let answer = Object.keys(props.answer)
-    .map((qAnswer,i)=>(
-      <li key={qAnswer}>{props.answer[qAnswer]}</li>
+        .map((qAnswer, i) => (
+            <li className={props.correctAnswer===qAnswer ? "correct" : props.clickedAnswer===qAnswer ? "incorrect" : ""}
+            onClick={() => props.checkAnswer(qAnswer)}
+                key={qAnswer}>
+                {props.answer[qAnswer]}</li>
 
-    ));   return (
-        <ul className="Answers">
-            {answer}
-        </ul>
-    )
+        )); return (
+            <ul className="Answers">
+                {answer}
+            </ul>
+        )
 }
 export default Answer
