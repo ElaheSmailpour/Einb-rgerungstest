@@ -43,7 +43,7 @@ export default class Quiz extends Component {
     }
  
     checkAnswer=(answer)=>{
-const {correctAnswers,setp,score,clickedAnswer}=this.state;
+
 if (answer===correctAnswer[step]){
 this.setState({score:score +1,correctAnswer:correctAnswers[setp],clickedAnswer:answer})
 }
@@ -51,18 +51,25 @@ else {
     this.setState({correctAnswer:0,clickedAnswer:answer})
 }
     }
+
+    nextstep=step=>{
+        this.setState({step:step + 1 , correctAnswer:0 , clickedAnswer:0})
+    }
+
     render() {
-      
+      let {questions,answers,correctAnswer,clickedAnswer,step}=this.state;
         return (
-            <div className="Quiz">
-                <Question question={this.state.questions[this.state.step]} />
-            <Answer answer={answers[this.state.step]}
-            setp={this.state.setp}
-            checkAnswer={this.state.checkAnswer}
-            correctAnswer={this.state.correctAnswer}
-            clickedAnswer={this.state.clickedAnswer}
+            <div className="Content">
+                <Question question={questions[step]} />
+            <Answer answer={answers[step]}
+            setp={setp}
+            checkAnswer={this.checkAnswer}
+            correctAnswer={correctAnswer}
+            clickedAnswer={clickedAnswer}
             />
-            <button className="Nextstep" disabled={this.state.clickedAnswer && Object.keys(questions >= step ? false : true)}>
+            <button className="Nextstep" disabled={clickedAnswer && Object.keys(questions).length >= step ? false : true}
+            onClick={()=>this.nextstep(step)}
+            >
                 Next </button>
             
             </div>

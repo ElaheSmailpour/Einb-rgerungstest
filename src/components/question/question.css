@@ -8,3 +8,18 @@ text-transform: none;
 text-shadow: none;
 text-align: left;
 }
+
+
+.Nextstep{
+    background-color: coral;
+    padding: 10px 10px;
+    color: #ffffff;
+    cursor: pointer;
+}
+.Nextstep:hover{
+background-color: rgb(137, 40, 150);
+
+}
+.Nextstep[disabled]{
+    display:none;
+}
