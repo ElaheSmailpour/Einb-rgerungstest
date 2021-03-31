@@ -57,21 +57,30 @@ else {
     }
 
     render() {
-      let {questions,answers,correctAnswer,clickedAnswer,step}=this.state;
+      let {questions,answers,correctAnswer,clickedAnswer,step,score}=this.state;
         return (
             <div className="Content">
-                <Question question={questions[step]} />
-            <Answer answer={answers[step]}
-            setp={setp}
-            checkAnswer={this.checkAnswer}
-            correctAnswer={correctAnswer}
-            clickedAnswer={clickedAnswer}
-            />
-            <button className="Nextstep" disabled={clickedAnswer && Object.keys(questions).length >= step ? false : true}
-            onClick={()=>this.nextstep(step)}
-            >
-                Next </button>
-            
+                {stop <= Object.keys(questions).length ?
+                (<>
+ <Question question={questions[step]} />
+ <Answer answer={answers[step]}
+ setp={setp}
+ checkAnswer={this.checkAnswer}
+ correctAnswer={correctAnswer}
+ clickedAnswer={clickedAnswer}
+ />
+ <button className="Nextstep" disabled={clickedAnswer && Object.keys(questions).length >= step ? false : true}
+ onClick={()=>this.nextstep(step)}
+ >
+     Next </button>)
+ </>):( <div className="finalpage">
+     <h1>You have completed the quiz!</h1>
+     <p>Your score ist : {score} of {Object.keys(questions).length}  </p>
+     <p>Thank You!</p>
+     </div>
+     )
+                }
+               
             </div>
         )
     }
