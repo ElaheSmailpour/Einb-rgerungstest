@@ -60,7 +60,7 @@ else {
       let {questions,answers,correctAnswer,clickedAnswer,step,score}=this.state;
         return (
             <div className="Content">
-                {stop <= Object.keys(questions).length ?
+                {step <= Object.keys(questions).length ?
                 (<>
  <Question question={questions[step]} />
  <Answer answer={answers[step]}
