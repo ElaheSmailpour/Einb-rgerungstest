@@ -52,16 +52,19 @@ else {
 }
     }
     render() {
-       let { questions} = this.state
+      
         return (
             <div className="Quiz">
-                <Question question={questions[step]} />
-            <Answer answer={answers[step]}
-            setp={setp}
-            checkAnswer={this.checkAnswer}
-            correctAnswer={correctAnswer}
-            clickedAnswer={clickedAnswer}
+                <Question question={this.state.questions[this.state.step]} />
+            <Answer answer={answers[this.state.step]}
+            setp={this.state.setp}
+            checkAnswer={this.state.checkAnswer}
+            correctAnswer={this.state.correctAnswer}
+            clickedAnswer={this.state.clickedAnswer}
             />
+            <button className="Nextstep" disabled={this.state.clickedAnswer && Object.keys(questions >= step ? false : true)}>
+                Next </button>
+            
             </div>
         )
     }

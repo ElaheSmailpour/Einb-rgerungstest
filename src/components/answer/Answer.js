@@ -9,10 +9,16 @@ const Answer = (props) => {
                 key={qAnswer}>
                 {props.answer[qAnswer]}</li>
 
-        )); return (
-            <ul className="Answers">
+        )); 
+        return (
+            <div className="clickedanswer">
+            <ul  disabled={props.clickedAnswer ? true : false} className="Answers">
                 {answer}
             </ul>
+            <div>
+                {props.correctAnswer ? "Correct answer!" : props.clickedAnswer ? "incorrect Answer!" : ""}
+            </div>
+            </div>
         )
 }
 export default Answer
