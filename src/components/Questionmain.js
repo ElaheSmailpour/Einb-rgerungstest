@@ -52,7 +52,7 @@ else {
        let { questions} = this.state
         return (
             <div className="Quiz">
-                <Question question={questions[1]} />
+                <Question question={questions[step]} />
             <Answer answer={answers[step]}
             setp={setp}
             checkAnswer={this.checkAnswer}
