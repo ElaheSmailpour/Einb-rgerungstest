@@ -33,12 +33,15 @@ export default class Quiz extends Component {
                 2: "1",
                 3: "1"
             },
+            
             correctAnswer: 0,
             clickedAnswer: 0,
             setp: 1,
             score: 0
         }
+       // this.checkAnswer=this.checkAnswer.bind(this)
     }
+ 
     checkAnswer=(answer)=>{
 const {correctAnswers,setp,score,clickedAnswer}=this.state;
 if (answer===correctAnswer[step]){
